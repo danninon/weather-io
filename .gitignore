@@ -1,7 +1,36 @@
+# Global
 /.idea
 
+# Backend
 /backend/node_modules
 
 /backend/.env
 
 /backend/logs/
+
+# Frontend
+
+# Logs
+frontend/weatherApp/logs
+frontend/weatherApp/*.log
+frontend/weatherApp/npm-debug.log*
+frontend/weatherApp/yarn-debug.log*
+frontend/weatherApp/yarn-error.log*
+frontend/weatherApp/pnpm-debug.log*
+frontend/weatherApp/lerna-debug.log*
+
+frontend/weatherApp/node_modules
+frontend/weatherApp/dist
+frontend/weatherApp/dist-ssr
+frontend/weatherApp/*.local
+
+# Editor directories and files
+frontend/weatherApp/.vscode/*
+frontend/weatherApp/!.vscode/extensions.json
+frontend/weatherApp/.idea
+frontend/weatherApp/.DS_Store
+frontend/weatherApp/*.suo
+frontend/weatherApp/*.ntvs*
+frontend/weatherApp/*.njsproj
+frontend/weatherApp/*.sln
+frontend/weatherApp/*.sw?

@@ -17,13 +17,11 @@ const swaggerOptions = {
                 url: swaggerURL,
                 email: swaggerEmail,
             },
-            servers: [{ url: `http://localhost:${config.port}` }],
+            servers: [{url: `http://localhost:${config.port}`}],
         },
     },
 
     apis: ['./src/routes/*.ts'],
-    // TODO: maybe change to routes only , '../controllers/*.ts'
-
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);

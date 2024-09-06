@@ -5,8 +5,8 @@ const logFilePath = process.env.LOG_FILE_PATH || 'logs/application.log';
 
 log4js.configure({
     appenders: {
-        out: { type: 'stdout' },
-        app: { type: 'file', filename: logFilePath },
+        out: {type: 'stdout'},
+        app: {type: 'file', filename: logFilePath},
     },
     categories: {
         default: {

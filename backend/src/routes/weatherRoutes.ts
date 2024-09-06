@@ -1,8 +1,7 @@
 import express from 'express';
-import { fetchWeather } from '../controllers/weatherController';
+import {fetchWeather} from '../controllers/weatherController';
 import {inputValidationHandler} from "../middlewares/inputValidationHandler";
 import {inputErrorHandler} from "../middlewares/inputErrorHandler";
-
 
 const router = express.Router();
 

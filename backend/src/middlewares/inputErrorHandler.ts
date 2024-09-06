@@ -1,8 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
+import {NextFunction, Request, Response} from 'express';
 import logger from '../libs/logger';
 
-export function inputErrorHandler(err: Error, req: Request, res: Response, next: NextFunction) : void
-{
+export function inputErrorHandler(err: Error, req: Request, res: Response, next: NextFunction): void {
     logger.error(`Validation error: ${err.message}, Query: ${JSON.stringify(req.query)}`);
 
     res.status(400).json({

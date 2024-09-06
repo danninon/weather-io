@@ -1,6 +1,7 @@
 import express from 'express';
 import config from './config/default';
 import logger from "./libs/logger";
+import weatherRoutes from "./routes/weatherRoutes";
 
 const app = express();
 
@@ -15,10 +16,7 @@ if (config.environment === 'development') {
     logger.info('Swagger enabled in development mode');
 }
 
-// dummy route
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+app.use('/api', weatherRoutes);
 
 app.use((req, res) => {
     logger.warn(`404 - Route not found: ${req.originalUrl}`);

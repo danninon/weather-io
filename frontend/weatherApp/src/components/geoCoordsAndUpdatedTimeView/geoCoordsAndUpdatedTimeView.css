@@ -1,0 +1,19 @@
+.geo-coords-container {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.geo-coords {
+    display: flex;
+    justify-content: flex-start;  /* Align items to the start */
+    gap: 10px;  /* Add a small gap between items */
+}
+
+.geo-coord {
+    margin-right: 10px; /* Remove this line */
+}
+
+.last-updated {
+    font-style: italic;
+}

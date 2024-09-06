@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import InputForm from './components/InputForm';
+import InputForm from './components/inputForm/InputForm.tsx';
 import { ExtractedWeatherData } from './interfaces/weatherData';
-import GeoCoordsAndUpdatedTimeView from "./components/geoCoordsAndUpdatedTimeView";
+import GeoCoordsAndUpdatedTimeView from "./components/geoCoordsAndUpdatedTimeView/GeoCoordsAndUpdatedTimeView.tsx";
 import WeatherDisplay from "./components/WeatherDisplay.tsx";
 
 function App() {

@@ -1,6 +1,6 @@
 import {ExtractedWeatherData} from '../interfaces/weatherData';
 import WeatherCard from "./WeatherCard.tsx";
-import ForecastItem from "./ForecastItem.tsx";
+import ForecastItem from "./forecaseItem/ForecastItem.tsx";
 
 function chooseForecastItems(
     localTime: string,

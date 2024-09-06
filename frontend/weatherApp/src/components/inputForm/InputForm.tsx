@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
+import {InputFormProps} from "../../interfaces/inputFormProps.ts";
+import './InputForm.css';
 
-interface InputFormProps {
-    label: string;                             // Label text for the input field
-    placeholder: string;                       // Placeholder text for the input field
-    buttonText: string;                        // Text on the submit button
-    onSubmit: (inputValue: string) => void;    // Function to call on submit
-}
 
 function InputForm(props: InputFormProps) {
     const {label, placeholder, buttonText, onSubmit} = props;
@@ -31,16 +27,19 @@ function InputForm(props: InputFormProps) {
     console.log('Rendering InputForm component with inputValue:', inputValue); // Log on every render
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="input-field">{label}</label>
-            <input
-                type="text"
-                id="input-field"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder={placeholder}
-            />
-            <button type="submit">{buttonText}</button>
+        <form className="input-form" onSubmit={handleSubmit}>
+            <label className="input-label" htmlFor="input-field">{label}</label>
+            <div className="input-wrapper">
+                <input
+                    className="input-field"
+                    type="text"
+                    id="input-field"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    placeholder={placeholder}
+                />
+                <button className="input-button" type="submit">{buttonText}</button>
+            </div>
         </form>
     );
 }

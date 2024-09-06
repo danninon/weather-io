@@ -27,6 +27,9 @@ export async function fetchWeatherData(city: string): Promise<ExtractedWeatherDa
             lastUpdated: data.current.last_updated,
             latitude: data.location.lat,
             longitude: data.location.lon,
+            conditionText: data.current.condition.text,
+            city: data.location.name,
+            precipitationMM: data.current.precip_mm,
             hourlyForecast: data.forecast.forecastday[CURRENT_DATE_INDEX].hour.map((hour: any) => ({
                 time: extractHourFromTimestamp(hour.time), // extract only the hour
                 temperatureCelsius: hour.temp_c

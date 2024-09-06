@@ -1,5 +1,6 @@
 import logger from "../libs/logger";
 
+
 export function validateResponseData(data: any): boolean {
     logger.info('Validating response data in validateResponseData function');
 
@@ -11,9 +12,17 @@ export function validateResponseData(data: any): boolean {
         validateHumidity(data.current.humidity);
         validateLatitude(data.location.lat);
         validateLongitude(data.location.lon);
+        validatePrecipitation(data.current.precip_mm);
     }
 
     return true;
+}
+
+function validatePrecipitation(precipitationInMM: number) {
+    if (precipitationInMM < 0) {
+        logger.error('Validation failed: an amount of water must be positive');
+        throw new Error('Invalid precipitationInMM: an amount of water must be positive');
+    }
 }
 
 

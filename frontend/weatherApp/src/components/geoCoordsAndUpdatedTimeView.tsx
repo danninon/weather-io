@@ -1,9 +1,6 @@
 import { ExtractedWeatherData } from '../interfaces/weatherData';
 
 function geoCoordsAndUpdatedTimeView({ latitude, longitude, lastUpdated }: Partial<ExtractedWeatherData>) {
-    // const { latitude, longitude, lastUpdated } = data;
-
-    // Extract date and time from lastUpdated (assuming ISO format)
     const date = new Date(lastUpdated as string);
     const formattedDate = date.toLocaleDateString();
     const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });

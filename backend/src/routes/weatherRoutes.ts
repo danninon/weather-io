@@ -1,6 +1,7 @@
 import express from 'express';
 import { fetchWeather } from '../controllers/weatherController';
-import logger from "../libs/logger";
+import {inputValidationHandler} from "../middlewares/inputValidationHandler";
+import {inputErrorHandler} from "../middlewares/inputErrorHandler";
 
 
 const router = express.Router();
@@ -26,8 +27,8 @@ const router = express.Router();
  *       500:
  *         description: Internal server error
  */
-router.get('/weather', fetchWeather);
+router.get('/weather', inputValidationHandler, fetchWeather);
 
-
+router.use(inputErrorHandler);
 
 export default router;

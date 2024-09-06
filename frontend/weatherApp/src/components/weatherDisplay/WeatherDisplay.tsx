@@ -1,10 +1,11 @@
-import {ExtractedWeatherData} from '../interfaces/weatherData';
-import WeatherCard from "./WeatherCard.tsx";
-import ForecastItem from "./forecaseItem/ForecastItem.tsx";
+import {ExtractedWeatherData} from '../../interfaces/weatherData.ts';
+import WeatherCard from "../weatherCard/WeatherCard.tsx";
+import ForecastItem from "../forecaseItem/ForecastItem.tsx";
+import './WeatherDisplay.css';
 
 function chooseForecastItems(
     localTime: string,
-    hourlyForecast: { time: string, temperatureCelsius: number }[]
+    hourlyForecast: { time: string; temperatureCelsius: number }[]
 ) {
     const currentHour = new Date(localTime).getHours();
 
@@ -12,15 +13,14 @@ function chooseForecastItems(
     return hourlyForecast.filter((forecast) => {
         const forecastHour = parseInt(forecast.time.split(':')[0], 10);
         return forecastHour >= currentHour - 3 && forecastHour <= currentHour + 1;
-    }); // Return the filtered forecast array
+    });
 }
 
-
-function WeatherDisplay({data}: { data: ExtractedWeatherData }) {
+function WeatherDisplay({ data }: { data: ExtractedWeatherData }) {
     const filteredForecast = chooseForecastItems(data.localTime, data.hourlyForecast);
 
     return (
-        <div>
+        <div className="weather-display">
             {/* Render WeatherCard with general weather details */}
             <WeatherCard
                 temperatureCelsius={data.temperatureCelsius}
@@ -33,21 +33,14 @@ function WeatherDisplay({data}: { data: ExtractedWeatherData }) {
                 city={data.city}
             />
 
-            <div>
-
-                <h3>Hourly Forecast</h3>
-                <div>
+            <div className="hourly-forecast-container">
                 {filteredForecast.map((forecast, index) => (
-
-                        <span>
                     <ForecastItem
                         key={index}
                         time={forecast.time}
                         temperatureCelsius={forecast.temperatureCelsius}
                     />
-                            </span>
                 ))}
-                </div>
             </div>
         </div>
     );

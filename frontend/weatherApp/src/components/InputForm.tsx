@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 interface InputFormProps {
     label: string;                             // Label text for the input field
@@ -8,7 +8,7 @@ interface InputFormProps {
 }
 
 function InputForm(props: InputFormProps) {
-    const { label, placeholder, buttonText, onSubmit } = props;
+    const {label, placeholder, buttonText, onSubmit} = props;
     const [inputValue, setInputValue] = useState('');
 
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {

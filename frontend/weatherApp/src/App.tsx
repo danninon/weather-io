@@ -2,6 +2,7 @@ import { useState } from 'react';
 import InputForm from './components/InputForm';
 import { ExtractedWeatherData } from './interfaces/weatherData';
 import GeoCoordsAndUpdatedTimeView from "./components/geoCoordsAndUpdatedTimeView";
+import WeatherDisplay from "./components/WeatherDisplay.tsx";
 
 function App() {
     const [weatherData, setWeatherData] = useState<ExtractedWeatherData | null>(null);
@@ -48,11 +49,13 @@ function App() {
             {error && <p>{error}</p>}
             {weatherData
                 &&
-                <GeoCoordsAndUpdatedTimeView
-                    latitude={weatherData.latitude}
-                     longitude={weatherData.longitude}
-                     lastUpdated={weatherData.lastUpdated}
-                />}
+            <GeoCoordsAndUpdatedTimeView
+                latitude={weatherData.latitude}
+                 longitude={weatherData.longitude}
+                 lastUpdated={weatherData.lastUpdated}
+            />}
+
+            {weatherData && <WeatherDisplay data={weatherData} />}
 
         </div>
     );

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Building a Todo App with Vue",
+    "cover": "https://nextjs.org/static/images/learn/foundations/next-app.png",
+    "author":"John Doe"
+  },
+  {
+    "id": 2,
+    "title": "Getting started with TypeScript",
+    "cover": "https://nextjs.org/static/images/learn/foundations/components.png",
+    "author":"Claman Joe"
+  }
+]

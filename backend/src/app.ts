@@ -2,10 +2,14 @@ import express from 'express';
 import config from './config/default';
 import logger from "./libs/logger";
 import weatherRoutes from "./routes/weatherRoutes";
+import cors from 'cors';
 
 const app = express();
 
 app.use(express.json());
+
+// Enable CORS for all routes
+app.use(cors());
 
 logger.info(`App running in ${config.environment} mode`);
 

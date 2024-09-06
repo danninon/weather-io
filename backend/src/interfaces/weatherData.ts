@@ -1,9 +1,11 @@
 export interface ExtractedWeatherData {
     country: string;
-    localtime: string;
-    temp_c: number;
-    wind_kph: number;
+    localTime: string;
+    temperatureCelsius: number;
+    windKph: number;
     humidity: number;
-    last_updated: string;
-    hourlyForecast: { time: string, temp_c: number }[]; // array of hourly forecasts
+    lastUpdated: string;
+    latitude: number;
+    longitude: number;
+    hourlyForecast: { time: string, temperatureCelsius: number }[]; // array of hourly forecasts
 }

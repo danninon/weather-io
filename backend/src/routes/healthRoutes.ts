@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
-import httpClient from '../../../../weatherio/src/libs/httpClient';
-import logger from '../../../../weatherio/src/libs/logger';
+import logger from '../libs/logger';
+import httpClient from "../libs/httpClient";
 
 const router = Router();
 

@@ -1,4 +1,4 @@
-import {useState, ChangeEvent, FormEvent} from 'react';
+import {ChangeEvent, FormEvent, useState} from 'react';
 import {InputFormProps} from "../../interfaces/inputFormProps";
 import './InputForm.css';
 
@@ -8,23 +8,16 @@ function InputForm(props: InputFormProps) {
     const [inputValue, setInputValue] = useState('');
 
     function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-        console.log('Input changed:', e.target.value); // Log the current input value
         setInputValue(e.target.value);
     }
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
-        console.log('Form submitted:', inputValue); // Log the input value on form submission
         if (inputValue.trim() !== '') {
-            console.log('Calling onSubmit with:', inputValue); // Log before calling onSubmit
-            onSubmit(inputValue); // Call the parent function passed as a prop
-            setInputValue(''); // Clear input after submission
-        } else {
-            console.log('Input is empty, form not submitted');
+            onSubmit(inputValue);
+            setInputValue('');
         }
     }
-
-    console.log('Rendering InputForm component with inputValue:', inputValue); // Log on every render
 
     return (
         <form className="input-form" onSubmit={handleSubmit}>

@@ -9,19 +9,18 @@ function chooseForecastItems(
 ) {
     const currentHour = new Date(localTime).getHours();
 
-    // Filter the forecast to show 3 hours before, the current hour, and 1 hour after
     return hourlyForecast.filter((forecast) => {
         const forecastHour = parseInt(forecast.time.split(':')[0], 10);
         return forecastHour >= currentHour - 3 && forecastHour <= currentHour + 1;
     });
 }
 
-function WeatherDisplay({ data }: { data: ExtractedWeatherData }) {
+function WeatherDisplay({data}: { data: ExtractedWeatherData }) {
     const filteredForecast = chooseForecastItems(data.localTime, data.hourlyForecast);
 
     return (
         <div className="weather-display">
-            {/* Render WeatherCard with general weather details */}
+            {}
             <WeatherCard
                 temperatureCelsius={data.temperatureCelsius}
                 windKph={data.windKph}

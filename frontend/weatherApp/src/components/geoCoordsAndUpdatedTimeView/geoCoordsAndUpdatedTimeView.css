@@ -1,14 +1,12 @@
 .geo-coords-container {
-    /*font-family: Arial, sans-serif;*/
     font-size: 14px;
-    margin-top:auto;
-    /*color: #666;*/
+    margin-top: auto;
 }
 
 .geo-coords {
     display: flex;
-    justify-content: flex-start;  /* Align items to the start */
-    gap: 20px;  /* Add a small gap between items */
+    justify-content: flex-start;
+    gap: 20px;
 
 }
 

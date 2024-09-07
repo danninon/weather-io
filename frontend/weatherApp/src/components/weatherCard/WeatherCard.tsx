@@ -1,4 +1,4 @@
-import { ExtractedWeatherData } from "../../interfaces/weatherData";
+import {ExtractedWeatherData} from "../../interfaces/weatherData";
 import './WeatherCard.css';
 
 function WeatherCard({

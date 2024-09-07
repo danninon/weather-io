@@ -3,14 +3,12 @@
     flex-direction: column;
     align-items: center;
     color: white;
-    /*padding: 20px;*/
-    padding:20px 10px 10px 10px;
+    padding: 20px 10px 10px 10px;
     border-radius: 10px;
     text-align: center;
     font-size: 16px;
     height: 70%;
     width: 100%;
-    /*position: marker;*/
 }
 
 .weather-city {
@@ -85,9 +83,9 @@
     padding: 0;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     .weather-card {
-        padding:10px 5px 5px 5px;
+        padding: 10px 5px 5px 5px;
         border-radius: 10px;
         font-size: 10px;
         height: 70%;
@@ -97,7 +95,9 @@
     .weather-detail {
         font-size: 10px;
     }
+
     .temperature {
         font-size: 36px;
     }
 }
+

@@ -45,12 +45,12 @@ button:active {
     color: #888;
 }
 
-
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
 
     button {
         padding: 10px 20px;
     }
+
     input {
         width: 150px;
     }

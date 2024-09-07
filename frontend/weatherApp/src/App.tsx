@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import InputForm from './components/inputForm/InputForm';
-import { ExtractedWeatherData } from './interfaces/weatherData';
+import {ExtractedWeatherData} from './interfaces/weatherData';
 import GeoCoordsAndUpdatedTimeView from "./components/geoCoordsAndUpdatedTimeView/GeoCoordsAndUpdatedTimeView";
 import WeatherDisplay from "./components/weatherDisplay/WeatherDisplay";
 import './App.css';
@@ -31,6 +31,11 @@ function App() {
         }
     }
 
+    //default rendering with the city tel-aviv
+    useEffect(() => {
+        fetchWeatherData("Tel-Aviv");
+    }, []);
+
     return (
         <div className="App">
 
@@ -60,10 +65,10 @@ function App() {
 
             </div>
             <div className="right-container">
-                    {loading && <p>Loading...</p>}
-                    {error && <p>{error}</p>}
-                    {weatherData && <WeatherDisplay data={weatherData} />}
-                </div>
+                {loading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
+                {weatherData && <WeatherDisplay data={weatherData}/>}
+            </div>
         </div>
     );
 }

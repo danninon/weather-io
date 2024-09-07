@@ -7,8 +7,8 @@ export interface ExtractedWeatherData {
     lastUpdated: string;
     latitude: number;
     longitude: number;
-    precipitationMM : number,
-    conditionText : string,
-    city : string,
+    precipitationMM: number,
+    conditionText: string,
+    city: string,
     hourlyForecast: { time: string, temperatureCelsius: number }[]; // array of hourly forecasts
 }

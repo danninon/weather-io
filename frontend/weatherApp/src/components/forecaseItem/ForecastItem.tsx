@@ -5,7 +5,7 @@ function ForecastItem({ time, temperatureCelsius }: { time: string; temperatureC
     return (
         <div className="forecast-item">
             <p className="forecast-time">{time}:00</p>
-            <p className="forecast-temp">{temperatureCelsius}°C</p>
+            <p className="forecast-temp">{Math.round(temperatureCelsius)}°</p>
         </div>
     );
 }

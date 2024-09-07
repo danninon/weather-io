@@ -13,12 +13,12 @@ function WeatherCard({
                      }: Partial<ExtractedWeatherData>) {
     return (
         <div className="weather-card">
-            <h2 className="weather-city">{city}</h2>
+            <p className="weather-city">{city}</p>
             <p className="weather-country">{country}</p>
             <p className="weather-local-time">{localTime}</p>
 
             <div className="weather-temp">
-                <span className="temperature">{temperatureCelsius}°</span>
+                <p className="temperature">{Math.round(temperatureCelsius as number)}°</p>
                 <p className="condition-text">{conditionText}</p>
             </div>
 

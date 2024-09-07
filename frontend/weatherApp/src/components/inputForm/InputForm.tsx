@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {InputFormProps} from "../../interfaces/inputFormProps.ts";
+import {useState, ChangeEvent, FormEvent} from 'react';
+import {InputFormProps} from "../../interfaces/inputFormProps";
 import './InputForm.css';
 
 
@@ -7,12 +7,12 @@ function InputForm(props: InputFormProps) {
     const {label, placeholder, buttonText, onSubmit} = props;
     const [inputValue, setInputValue] = useState('');
 
-    function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
         console.log('Input changed:', e.target.value); // Log the current input value
         setInputValue(e.target.value);
     }
 
-    function handleSubmit(e: React.FormEvent) {
+    function handleSubmit(e: FormEvent) {
         e.preventDefault();
         console.log('Form submitted:', inputValue); // Log the input value on form submission
         if (inputValue.trim() !== '') {
@@ -37,6 +37,7 @@ function InputForm(props: InputFormProps) {
                     value={inputValue}
                     onChange={handleInputChange}
                     placeholder={placeholder}
+
                 />
                 <button className="input-button" type="submit">{buttonText}</button>
             </div>

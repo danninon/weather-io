@@ -3,6 +3,7 @@ import config from './config/default';
 import logger from "./libs/logger";
 import weatherRoutes from "./routes/weatherRoutes";
 import cors from 'cors';
+import healthRoutes from "./routes/healthRoutes";
 
 const app = express();
 
@@ -21,6 +22,7 @@ if (config.environment === 'development') {
 }
 
 app.use('/api', weatherRoutes);
+app.use('/health', healthRoutes);
 
 app.use((req, res) => {
     logger.warn(`404 - Route not found: ${req.originalUrl}`);

@@ -15,7 +15,6 @@ function InputForm(props: InputFormProps) {
         e.preventDefault();
         if (inputValue.trim() !== '') {
             onSubmit(inputValue);
-            setInputValue('');
         }
     }
 

@@ -5,6 +5,7 @@ import GeoCoordsAndUpdatedTimeView from "./components/geoCoordsAndUpdatedTimeVie
 import WeatherDisplay from "./components/weatherDisplay/WeatherDisplay";
 import './App.css';
 import imageToAdd from "./assets/images/logo.png";
+import config from "./config/default";
 
 function App() {
     const [weatherData, setWeatherData] = useState<ExtractedWeatherData | null>(null);
@@ -16,7 +17,7 @@ function App() {
         setError(null);
 
         try {
-            const response = await fetch(`http://localhost:3000/api/weather?city=${city}`);
+            const response = await fetch(`${config.weatherEndpoint}=${city}`);
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.error || 'Unknown error occurred');
@@ -33,7 +34,7 @@ function App() {
 
     //default rendering with the city tel-aviv
     useEffect(() => {
-        fetchWeatherData("Tel-Aviv");
+        fetchWeatherData(config.defaultCity);
     }, []);
 
     return (

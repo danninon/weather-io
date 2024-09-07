@@ -1,5 +1,5 @@
 import {ExtractedWeatherData} from '../../interfaces/weatherData';
-import './geoCoordsAndUpdatedTimeView.css';
+import './GeoCoordsAndUpdatedTimeView.css';
 
 function GeoCoordsAndUpdatedTimeView({latitude, longitude, lastUpdated}: Partial<ExtractedWeatherData>) {
     const date = new Date(lastUpdated as string);

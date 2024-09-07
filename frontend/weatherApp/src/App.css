@@ -98,6 +98,8 @@ html, body{
 
 
   }
-
+  .right-container {
+    padding: 20px 10px;
+  }
 
 }

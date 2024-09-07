@@ -64,9 +64,6 @@ function App() {
                     {error && <p>{error}</p>}
                     {weatherData && <WeatherDisplay data={weatherData} />}
                 </div>
-
-
-
         </div>
     );
 }

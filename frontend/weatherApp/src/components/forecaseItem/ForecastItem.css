@@ -6,7 +6,6 @@
 }
 
 .forecast-time {
-    font-size: 14px;
     color: #999;
     margin: 0; /* Remove margin */
     padding: 0; /* Ensure no padding */
@@ -18,4 +17,13 @@
     color: white;
     margin: 0; /* Remove margin */
     padding: 0; /* Ensure no padding */
+}
+
+@media screen and (max-width: 800px){
+    .forecast-item {
+        font-size: 10px;
+    }
+    .forecast-temp {
+        font-size: 8px;
+    }
 }

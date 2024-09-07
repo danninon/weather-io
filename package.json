@@ -1,0 +1,19 @@
+{
+  "name": "weather-io",
+  "version": "1.0.0",
+  "description": "an npm script to check installation, install if needed and otherwise run both frontend and backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install && concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "npm run start --prefix backend",
+    "start:frontend": "npm run start --prefix frontend/weatherApp",
+    "windows_kill": "taskkill /F /IM node.exe /T",
+    "linux_kill": "pkill -f \"npm run dev --prefix backend\" && pkill -f \"npm run dev --prefix frontend/weatherApp\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

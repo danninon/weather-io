@@ -8,7 +8,7 @@
     "start:backend": "npm run start --prefix backend",
     "start:frontend": "npm run start --prefix frontend/weatherApp",
     "windows_kill": "taskkill /F /IM node.exe /T",
-    "linux_kill": "pkill -f \"npm run dev --prefix backend\" && pkill -f \"npm run dev --prefix frontend/weatherApp\""
+    "linux_kill": "lsof -t -i:5173 | xargs kill -9 && lsof -t -i:3000 | xargs kill -9"
   },
   "keywords": [],
   "author": "",
